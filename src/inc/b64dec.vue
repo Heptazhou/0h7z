@@ -5,19 +5,17 @@
 
 	const route = useRoute()
 	const data = reactive({ str: "" })
-
-	const hashdec = (hash) => {
-		let h = hash.replace(/^#*/, "")
-		if (h == "") return "> Nothing to do."
+	const dec = (msg) => {
 		try {
-			return decode(h)
+			const r = decode(msg)
+			if (r) navigator.clipboard.writeText(r)
+			return `${r || "> Nothing to do."}`
 		} catch (e) {
+			console.debug(e)
 			return "> Decode failed."
 		}
 	}
-	watchEffect(async () => {
-		data.str = await hashdec(route.hash)
-	})
+	watchEffect(() => (data.str = dec(route.hash.replace(/^#*/, ""))))
 </script>
 
 <template>
@@ -27,5 +25,7 @@
 <style scoped>
 	div {
 		margin: 3.14rem;
+		white-space: pre-wrap;
+		white-space: break-spaces;
 	}
 </style>

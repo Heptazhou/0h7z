@@ -8,10 +8,17 @@
 		<HelloWorld msg="Hello World." />
 	</div>
 	<div center italic>
-		<p>Still under early construction.</p>
 		<p>
-			The old site is at <a href="https://www.heptazhou.com/" target="_blank">heptazhou.com</a><br />
-			if you have interest.
+			Greetings.<br /><br />
+			Nothing much here.
+		</p>
+		<p>
+			Check out more on GitHub.<br />
+			> <a href="https://github.com/0h7z" target="_blank">github.com/0h7z</a>
+		</p>
+		<p hidden>
+			Also have a look at<br />
+			<a href="https://www.heptazhou.com" target="_blank">heptazhou.com</a> .
 		</p>
 	</div>
 </template>
